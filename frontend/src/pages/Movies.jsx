@@ -18,7 +18,7 @@ function Movies() {
 
     try {
       const response = await axios.get(
-  `http://localhost:5000/api/movies/search?query=${query}`
+  `${import.meta.env.VITE_API_URL}/api/movies/search?query=${query}`
 );
 
       if (response.data.Response === "True") {

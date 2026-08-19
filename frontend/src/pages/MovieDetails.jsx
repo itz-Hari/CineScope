@@ -19,7 +19,7 @@ function MovieDetails() {
 
   try {
     await axios.post(
-      "http://localhost:5000/api/favorites",
+      `${import.meta.env.VITE_API_URL}/api/favorites`,
       {
         movieId: movie.imdbID,
         title: movie.Title,
@@ -42,7 +42,7 @@ function MovieDetails() {
   useEffect(() => {
     const getMovie = async () => {
       const response = await axios.get(
-        `http://localhost:5000/api/movies/${id}`
+        `${import.meta.env.VITE_API_URL}/api/movies/${id}`
       );
 
       setMovie(response.data);

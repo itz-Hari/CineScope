@@ -15,7 +15,7 @@ function Favorites() {
 
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/favorites",
+          `${import.meta.env.VITE_API_URL}/api/favorites`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -39,7 +39,7 @@ function Favorites() {
 
   try {
     await axios.delete(
-      `http://localhost:5000/api/favorites/${id}`,
+      `${import.meta.env.VITE_API_URL}/api/favorites/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`
